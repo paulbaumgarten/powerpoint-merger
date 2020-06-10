@@ -1,6 +1,3 @@
 python-pptx
 pillow
-pandas
-openpyxl
-xlrd
 Gooey
