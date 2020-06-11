@@ -47,7 +47,10 @@ def xlsx2(fname):
                 row[letter] = value
             else:
                 label = labels[letter]
-                row[label] = value
+                if value is None:
+                    row[label] = ''
+                else:
+                    row[label] = value
             value = ''
         if el.tag.endswith('}row'):
             rows.append(row)
@@ -56,7 +59,7 @@ def xlsx2(fname):
     return rows
 
 
-excel = "c:/temp/Graduation 2020 - Presentation details (Responses) (1).xlsx"
+excel = "c:/temp/Master list - Group A.xlsx"
 data = xlsx2(excel)
 #pprint(data)
 import json

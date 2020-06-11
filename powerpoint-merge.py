@@ -37,7 +37,10 @@ def xlsx2(fname): # https://stackoverflow.com/a/59973648
                 row[letter] = value
             else:
                 label = labels[letter]
-                row[label] = value
+                if value is None:
+                    row[label] = ''
+                else:
+                    row[label] = value
             value = ''
         if el.tag.endswith('}row'):
             rows.append(row)
